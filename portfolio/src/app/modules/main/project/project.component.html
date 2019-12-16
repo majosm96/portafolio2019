@@ -1,0 +1,64 @@
+<div class="wrapper">
+    <main role="main">
+      <!--Teaser about me-->
+      <section class="l-group section-wrap bg-purple">
+
+        <div class="project-info__title">
+          <h1>{{ selectedProject.title }}</h1>
+        </div>
+
+      </section>
+
+      <section *ngIf="selectedProject?.wireframes">
+
+      </section>
+      
+      <!--About project-->
+      <section class="l-group section-wrap group" id="">
+
+        <div class="l-group section-wrap project-info__details">
+          <div class="project-info__item">
+            <p *ngFor="let p of selectedProject.about">{{ p }}</p>
+            <a *ngIf="selectedProject.siteUrl" target="_blank" class="a--underline" href="{{ selectedProject.siteUrl }}">Visit Site</a>
+            <a *ngIf="selectedProject.siteCode" target="_blank" class="a--underline" href="{{ selectedProject.siteCode }}">View Code</a>
+          </div>
+        </div>
+        
+        <div class="l-group section-wrap">
+            <h2>Role</h2>
+            <p *ngFor="let p of selectedProject.about2">{{ p }}</p>  
+        </div>
+
+        <div class="l-group section-wrap">
+            <h2>Challenge</h2>
+            <p *ngFor="let p of selectedProject.about3">{{ p }}</p>  
+        </div>
+
+        <div class="l-group section-wrap">
+          <img *ngIf="selectedProject.img" class="project__mobile-img" src="{{ selectedProject.img }}" alt="">
+        </div>
+
+        <div class="l-group section-wrap" *ngIf="selectedProject.section2">
+          <h2>{{ selectedProject.section2.title }}</h2>
+          <p>{{ selectedProject.section2.info }}</p>
+          <div class="project__mobile-imgs">
+            <img  *ngFor="let img of selectedProject.section2.img" src="{{ img }}" alt="">
+          </div>
+        </div>
+        
+        <div class="l-group section-wrap">
+          <div class="section-wrap" *ngIf="selectedProject?.mobile?.text">
+            <h2 class="">Final Product</h2>
+            <p>{{ selectedProject.mobile.text }}</p>
+          </div>
+          <div class="project__mobile-imgs">
+            <img  *ngFor="let img of selectedProject.mobile.img" src="{{ img }}" alt="">
+          </div>
+          <iframe src="https://player.vimeo.com/video/378460077" width="640" height="443" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <!-- <iframe *ngFor="let video of selectedProject.mobile.video" src="{{ video }}" width="640" height="443" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+        </div>  
+      </section>
+
+      <app-contact></app-contact>
+    </main>
+  </div>
