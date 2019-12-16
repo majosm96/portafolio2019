@@ -1,7 +1,7 @@
 <div class="l-group">
     <header class="l-group site-header" role="banner">
       <div class="site-nav">
-        <a href="/home" class="logo">
+        <a [routerLink]="'/home'" class="logo">
           <img src="/assets/images/eye_basic.png" alt="Logo Maria Jose Solis">
         </a>
         <nav class="main-menu" id="menu">
@@ -12,7 +12,7 @@
       <div class="navigation" id="navigation">
 
         <div class="site-nav">
-          <a href="/home" class="logo">
+          <a [routerLink]="'/home'" class="logo">
           <img src="/assets/images/eye_close.png" (click)="toggleMenu()" alt="Logo Maria Jose Solis">
         </a>
           <nav class="main-menu" id="hideMenu">
