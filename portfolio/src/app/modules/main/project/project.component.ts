@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-project',
@@ -8,6 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectComponent implements OnInit {
 
+  sanitizerUrl(url :string){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url)
+  }
+  
   public projects = [{
     id: 1,
     title: '05 Minute foundation',
@@ -74,6 +79,7 @@ export class ProjectComponent implements OnInit {
   {
     id: 3,
     title: 'Micro world - Biodesign',
+    video: 'https://player.vimeo.com/video/379582711',
     wireframes: true,
     about: [
       'As part of Copenhagen Institute of Interaction Design summer school one of the most rich and clarity experience that ever had.'
@@ -98,6 +104,7 @@ export class ProjectComponent implements OnInit {
   {
     id: 4,
     title: 'Galaxies',
+    video: 'https://player.vimeo.com/video/225519371',
     wireframes: {
       img: '/assets/images/cedro01.png',
       title: 'Test'
@@ -127,7 +134,7 @@ export class ProjectComponent implements OnInit {
 
   public selectedProject;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     window.scroll(0,0); // Goes to page top

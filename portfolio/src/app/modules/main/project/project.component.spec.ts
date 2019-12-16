@@ -11,7 +11,7 @@ describe('ProjectComponent', () => {
       declarations: [ ProjectComponent ]
     })
     .compileComponents();
-  }));
+  }))
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectComponent);

@@ -1,33 +1,33 @@
 <div class="l-group">
     <header class="l-group site-header" role="banner">
       <div class="site-nav">
-        <a routerLink="'/home'" class="logo">
+        <a href="/home" class="logo">
           <img src="/assets/images/eye_basic.png" alt="Logo Maria Jose Solis">
         </a>
         <nav class="main-menu" id="menu">
-          <img src="/assets/images/menu_dark_heavy.png" alt="Menu" class="menu-img">
+          <img src="/assets/images/menu_dark_heavy.png" (click)="toggleMenu()" alt="Menu" class="menu-img">
         </nav>
       </div>
 
       <div class="navigation" id="navigation">
 
         <div class="site-nav">
-          <a routerLink="'/home'" class="logo">
-          <img src="/assets/images/eye_close.png" alt="Logo Maria Jose Solis">
+          <a href="/home" class="logo">
+          <img src="/assets/images/eye_close.png" (click)="toggleMenu()" alt="Logo Maria Jose Solis">
         </a>
           <nav class="main-menu" id="hideMenu">
-            <img src="/assets/images/close.png" alt="Close icon" class="menu-img menu-img__close">
+            <img src="/assets/images/close.png" alt="Close icon" (click)="toggleMenu()" class="menu-img menu-img__close">
           </nav>
         </div>
 
         <div class="left-nav"></div>
 
-        <div class="right-nav">
+        <div class="right-nav" id=#menu>
           <ul class="inner-nav">
-            <li><a class="underline menuItem" href="#projects">Work</a></li>
+            <li><a class="underline menuItem" href="/home#projects" (click)="toggleMenu()" >Work</a></li>
             <!-- <li><a class="underline menuItem" href="#about">About</a></li> -->
-            <li><a class="underline menuItem" href="#skills">Skills</a></li>
-            <li><a class="underline menuItem" href="#contact">Contact</a></li>
+            <li><a class="underline menuItem" href="/home#skills" (click)="toggleMenu()" >Skills</a></li>
+            <li><a class="underline menuItem" href="/home#contact" (click)="toggleMenu()" >Contact</a></li>
           </ul>
         </div>
 

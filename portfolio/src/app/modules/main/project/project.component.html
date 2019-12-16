@@ -54,8 +54,9 @@
           <div class="project__mobile-imgs">
             <img  *ngFor="let img of selectedProject.mobile.img" src="{{ img }}" alt="">
           </div>
-          <iframe src="https://player.vimeo.com/video/378460077" width="640" height="443" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-          <!-- <iframe *ngFor="let video of selectedProject.mobile.video" src="{{ video }}" width="640" height="443" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+          <div *ngIf="selectedProject.video">
+            <iframe [src]="sanitizerUrl(selectedProject.video)" width="640" height="443" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></ iframe>
+          </div>
         </div>  
       </section>
 
